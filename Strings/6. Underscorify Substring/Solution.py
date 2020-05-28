@@ -1,4 +1,4 @@
-
+#O(n*m) | O(n) space
 def underscorifySubstring(string, substring):
     locations = collapse(getLocations(string, substring))
 	return underscorify(string, locations)
