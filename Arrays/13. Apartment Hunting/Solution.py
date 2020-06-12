@@ -1,5 +1,6 @@
+#O(b^2*r) time | O(b) space - where b is the number of blocks and r is the number of requirements
 def apartmentHunting(blocks, reqs):
-	maxDistancesAtBlocks = [float("-inf") for block in blocks]
+    maxDistancesAtBlocks = [float("-inf") for block in blocks]
 	for i in range(len(blocks)):
 		for req in reqs:
 			closestReqDistance = float("inf")
@@ -7,7 +8,7 @@ def apartmentHunting(blocks, reqs):
 				if blocks[j][req]:
 					closestReqDistance = min(closestReqDistance, distanceBetween(i, j))
 			maxDistancesAtBlocks[i] = max(maxDistancesAtBlocks[i], closestReqDistance)
-		return getIdxAtMinValue(maxDistancesAtBlocks)
+	return getIdxAtMinValue(maxDistancesAtBlocks)
 
 def getIdxAtMinValue(array):
 	idxAtMinValue = 0
